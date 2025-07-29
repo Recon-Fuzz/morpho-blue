@@ -5,7 +5,6 @@ sizes = true
 via_ir = true
 optimizer = true
 optimizer_runs = 999999
-bytecode_hash = "none"
 evm_version = "paris"
 
 [profile.default.invariant]

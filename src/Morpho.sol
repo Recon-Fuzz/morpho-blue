@@ -31,6 +31,8 @@ import {SharesMathLib} from "./libraries/SharesMathLib.sol";
 import {MarketParamsLib} from "./libraries/MarketParamsLib.sol";
 import {SafeTransferLib} from "./libraries/SafeTransferLib.sol";
 
+import "forge-std/console2.sol";
+
 /// @title Morpho
 /// @author Morpho Labs
 /// @custom:contact security@morpho.org
@@ -535,6 +537,9 @@ contract Morpho is IMorphoStaticTyping {
         uint256 maxBorrow = uint256(position[id][borrower].collateral).mulDivDown(collateralPrice, ORACLE_PRICE_SCALE)
             .wMulDown(marketParams.lltv);
 
+        console2.log("isHealthy", maxBorrow >= borrowed);
+        console2.log("collateralPrice", collateralPrice);
+        
         return maxBorrow >= borrowed;
     }
 
