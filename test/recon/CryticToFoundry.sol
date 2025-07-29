@@ -23,6 +23,13 @@ contract CryticToFoundry is Test, TargetFunctions, FoundryAsserts {
         oracle_setPrice(1e30);
 
         morpho_borrow(1e6, 0, address(this), address(this));
+
+        morpho_repay(1e6, 0, address(this), "");
+
+        // oracle_setPrice(0);
+
+        // morpho_liquidate(address(this), 1e6, 0, "");
+
     }
    		
 }

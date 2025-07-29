@@ -28,6 +28,8 @@ abstract contract Setup is BaseSetup, ActorManager, AssetManager, Utils {
     OracleMock oracle;
 
     MarketParams marketParams;
+
+    bool hasRepaid;
     
     /// === Setup === ///
     /// This contains all calls to be performed in the tester constructor, both for Echidna and Foundry

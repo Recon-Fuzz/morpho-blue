@@ -57,6 +57,7 @@ abstract contract MorphoTargets is
 
     function morpho_repay(uint256 assets, uint256 shares, address onBehalf, bytes memory data) public asActor {
         morpho.repay(marketParams, assets, shares, onBehalf, data);
+        hasRepaid = true;
     }
 
     function morpho_setAuthorization(address authorized, bool newIsAuthorized) public asActor {
