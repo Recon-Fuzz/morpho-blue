@@ -21,28 +21,28 @@ abstract contract MorphoTargets is
 {
     /// CUSTOM TARGET FUNCTIONS - Add your own target functions here ///
     function morpho_supply_clamped(uint256 assets) public {
-        morpho_supply(assets, 0, address(this), hex"");
+        morpho_supply(assets, 0, _getActor(), hex"");
     }
 
     function morpho_supplyCollateral_clamped(uint256 assets) public {
-        morpho_supplyCollateral(assets, address(this), hex"");
+        morpho_supplyCollateral(assets, _getActor(), hex"");
     }
 
     function morpho_liquidate_assets(uint256 seizedAssets, bytes memory data) public {
-        morpho_liquidate(address(this), seizedAssets, 0, data);
+        morpho_liquidate(_getActor(), seizedAssets, 0, data);
     }
 
     function morpho_liquidate_shares(uint256 shares, bytes memory data) public {
-        morpho_liquidate(address(this), 0, shares, data);
+        morpho_liquidate(_getActor(), 0, shares, data);
     }
 
     function morpho_repay_clamped(uint256 assets) public {
-        morpho_repay(assets, 0, address(this), hex"");
+        morpho_repay(assets, 0, _getActor(), hex"");
     }
 
     function morpho_shortcut_liquidate_full() public {
-        (, uint256 borrowedShares, ) = morpho.position(MarketParamsLib.id(marketParams), address(this));
-        morpho_liquidate(address(this), 0, borrowedShares, hex"");
+        (, uint256 borrowedShares, ) = morpho.position(MarketParamsLib.id(marketParams), _getActor());
+        morpho_liquidate(_getActor(), 0, borrowedShares, hex"");
     }
 
     /// AUTO GENERATED TARGET FUNCTIONS - WARNING: DO NOT DELETE OR MODIFY THIS LINE ///
