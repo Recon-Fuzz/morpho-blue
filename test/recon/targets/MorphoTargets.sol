@@ -55,8 +55,8 @@ abstract contract MorphoTargets is
         morpho.borrow(marketParams, assets, shares, onBehalf, receiver);
     }
 
-    function morpho_createMarket() public asActor {
-        morpho.createMarket(marketParams);
+    function morpho_createMarket(MarketParams memory _marketParams) public asActor {
+        morpho.createMarket(_marketParams);
     }
 
     function morpho_enableIrm(address irm) public asActor {

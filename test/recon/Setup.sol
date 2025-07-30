@@ -26,7 +26,6 @@ abstract contract Setup is BaseSetup, ActorManager, AssetManager, Utils {
     // Mocks
     MockIRM irm;
     OracleMock oracle;
-
     MarketParams marketParams;
 
     bool hasRepaid;
