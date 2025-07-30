@@ -33,7 +33,7 @@ abstract contract Setup is BaseSetup, ActorManager, AssetManager, Utils {
     /// This contains all calls to be performed in the tester constructor, both for Echidna and Foundry
     function setup() internal virtual override {
         // Deploy Morpho
-        morpho = new Morpho(address(this)); 
+        morpho = new Morpho(_getActor()); 
 
         // Deploy Mocks
         irm = new MockIRM();

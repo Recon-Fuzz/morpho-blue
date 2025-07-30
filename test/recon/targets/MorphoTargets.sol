@@ -18,11 +18,11 @@ abstract contract MorphoTargets is
 {
     /// CUSTOM TARGET FUNCTIONS - Add your own target functions here ///
     function morpho_supply_clamped(uint256 assets) public {
-        morpho_supply(assets, 0, address(this), hex"");
+        morpho_supply(assets, 0, _getActor(), hex"");
     }
 
     function morpho_supplyCollateral_clamped(uint256 assets) public {
-        morpho_supplyCollateral(assets, address(this), hex"");
+        morpho_supplyCollateral(assets, _getActor(), hex"");
     }
 
     /// AUTO GENERATED TARGET FUNCTIONS - WARNING: DO NOT DELETE OR MODIFY THIS LINE ///
