@@ -2,15 +2,18 @@
 pragma solidity ^0.8.0;
 
 import {BaseTargetFunctions} from "@chimera/BaseTargetFunctions.sol";
-import {BeforeAfter} from "../BeforeAfter.sol";
-import {Properties} from "../Properties.sol";
+
 // Chimera deps
 import {vm} from "@chimera/Hevm.sol";
 
 // Helpers
 import {Panic} from "@recon/Panic.sol";
 
+import {MarketParamsLib} from "src/libraries/MarketParamsLib.sol";
+
 import "src/Morpho.sol";
+import {BeforeAfter} from "../BeforeAfter.sol";
+import {Properties} from "../Properties.sol";
 
 abstract contract MorphoTargets is
     BaseTargetFunctions,
@@ -23,6 +26,23 @@ abstract contract MorphoTargets is
 
     function morpho_supplyCollateral_clamped(uint256 assets) public {
         morpho_supplyCollateral(assets, address(this), hex"");
+    }
+
+    function morpho_liquidate_assets(uint256 seizedAssets, bytes memory data) public {
+        morpho_liquidate(address(this), seizedAssets, 0, data);
+    }
+
+    function morpho_liquidate_shares(uint256 shares, bytes memory data) public {
+        morpho_liquidate(address(this), 0, shares, data);
+    }
+
+    function morpho_repay_clamped(uint256 assets) public {
+        morpho_repay(assets, 0, address(this), hex"");
+    }
+
+    function morpho_shortcut_liquidate_full() public {
+        (, uint256 borrowedShares, ) = morpho.position(MarketParamsLib.id(marketParams), address(this));
+        morpho_liquidate(address(this), 0, borrowedShares, hex"");
     }
 
     /// AUTO GENERATED TARGET FUNCTIONS - WARNING: DO NOT DELETE OR MODIFY THIS LINE ///
@@ -53,6 +73,7 @@ abstract contract MorphoTargets is
 
     function morpho_liquidate(address borrower, uint256 seizedAssets, uint256 repaidShares, bytes memory data) public asActor {
         morpho.liquidate(marketParams, borrower, seizedAssets, repaidShares, data);
+        hasLiquidated = true;
     }
 
     function morpho_repay(uint256 assets, uint256 shares, address onBehalf, bytes memory data) public asActor {

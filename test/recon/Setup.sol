@@ -30,6 +30,7 @@ abstract contract Setup is BaseSetup, ActorManager, AssetManager, Utils {
     MarketParams marketParams;
 
     bool hasRepaid;
+    bool hasLiquidated;
     
     /// === Setup === ///
     /// This contains all calls to be performed in the tester constructor, both for Echidna and Foundry
