@@ -40,11 +40,6 @@ abstract contract MorphoTargets is
         morpho_repay(assets, 0, _getActor(), hex"");
     }
 
-    function morpho_shortcut_liquidate_full() public {
-        (, uint256 borrowedShares, ) = morpho.position(MarketParamsLib.id(marketParams), _getActor());
-        morpho_liquidate(_getActor(), 0, borrowedShares, hex"");
-    }
-
     /// AUTO GENERATED TARGET FUNCTIONS - WARNING: DO NOT DELETE OR MODIFY THIS LINE ///
 
     function morpho_accrueInterest() public asActor {
