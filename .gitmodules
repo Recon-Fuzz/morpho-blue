@@ -3,4 +3,10 @@
 	url = https://github.com/foundry-rs/forge-std
 [submodule "lib/halmos-cheatcodes"]
 	path = lib/halmos-cheatcodes
-	url = https://github.com/a16z/halmos-cheatcodes.git
+	url = https://github.com/a16z/halmos-cheatcodes
+[submodule "lib/setup-helpers"]
+	path = lib/setup-helpers
+	url = https://github.com/Recon-Fuzz/setup-helpers
+[submodule "lib/chimera"]
+	path = lib/chimera
+	url = https://github.com/Recon-Fuzz/chimera
