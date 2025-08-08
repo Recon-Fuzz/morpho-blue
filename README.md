@@ -1,4 +1,17 @@
-# Morpho Blue
+# Introduction
+
+This repo is forked from the original Morpho repo for use with the first two parts of the [Recon bootcamp](https://book.getrecon.xyz//bootcamp/bootcamp_intro.html).
+
+## Branches Of Interest
+
+The following branches have been created to make following along with the bootcamp easier:
+- [`main`](https://github.com/Recon-Fuzz/morpho-blue/tree/main) - the original morpho repo which is scaffolded in part 1
+- [`day-1`](https://github.com/Recon-Fuzz/morpho-blue/tree/day-1) - the original morpho repo + scafolding up to the end of part 1
+- [`day-2`](https://github.com/Recon-Fuzz/morpho-blue/tree/day-2) - the original morpho repo + scafolding up to the end of part 2
+
+--- 
+
+## Morpho Blue
 
 Morpho Blue is a noncustodial lending protocol implemented for the Ethereum Virtual Machine.
 Morpho Blue offers a new trustless primitive with increased efficiency and flexibility compared to existing lending platforms.
