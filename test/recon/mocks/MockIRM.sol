@@ -10,7 +10,11 @@ contract MockIRM {
         _borrowRate = newBorrowRate;
     }
 
-    function borrowRate(MarketParams memory marketParams, Market memory market) external view returns (uint256) {
+    function borrowRate(MarketParams memory marketParams, Market memory market) public view returns (uint256) {
         return _borrowRate;
+    }
+
+    function borrowRateView(MarketParams memory marketParams, Market memory market) public view returns (uint256) {
+        return borrowRate(marketParams, market);
     }
 }
