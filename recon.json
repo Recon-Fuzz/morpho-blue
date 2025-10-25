@@ -1,0 +1,93 @@
+{
+  "out/Morpho.sol/Morpho.json": {
+    "enabled": true,
+    "functions": [
+      {
+        "signature": "accrueInterest(tuple)",
+        "actor": "actor",
+        "mode": "normal"
+      },
+      {
+        "signature": "borrow(tuple,uint256,uint256,address,address)",
+        "actor": "actor",
+        "mode": "normal"
+      },
+      {
+        "signature": "createMarket(tuple)",
+        "actor": "actor",
+        "mode": "normal"
+      },
+      {
+        "signature": "enableIrm(address)",
+        "actor": "actor",
+        "mode": "normal"
+      },
+      {
+        "signature": "enableLltv(uint256)",
+        "actor": "actor",
+        "mode": "normal"
+      },
+      {
+        "signature": "flashLoan(address,uint256,bytes)",
+        "actor": "actor",
+        "mode": "normal"
+      },
+      {
+        "signature": "liquidate(tuple,address,uint256,uint256,bytes)",
+        "actor": "actor",
+        "mode": "normal"
+      },
+      {
+        "signature": "repay(tuple,uint256,uint256,address,bytes)",
+        "actor": "actor",
+        "mode": "normal"
+      },
+      {
+        "signature": "setAuthorization(address,bool)",
+        "actor": "actor",
+        "mode": "normal"
+      },
+      {
+        "signature": "setAuthorizationWithSig(tuple,tuple)",
+        "actor": "actor",
+        "mode": "normal"
+      },
+      {
+        "signature": "setFee(tuple,uint256)",
+        "actor": "actor",
+        "mode": "normal"
+      },
+      {
+        "signature": "setFeeRecipient(address)",
+        "actor": "actor",
+        "mode": "normal"
+      },
+      {
+        "signature": "setOwner(address)",
+        "actor": "actor",
+        "mode": "normal"
+      },
+      {
+        "signature": "supply(tuple,uint256,uint256,address,bytes)",
+        "actor": "actor",
+        "mode": "normal"
+      },
+      {
+        "signature": "supplyCollateral(tuple,uint256,address,bytes)",
+        "actor": "actor",
+        "mode": "normal"
+      },
+      {
+        "signature": "withdraw(tuple,uint256,uint256,address,address)",
+        "actor": "actor",
+        "mode": "normal"
+      },
+      {
+        "signature": "withdrawCollateral(tuple,uint256,address,address)",
+        "actor": "actor",
+        "mode": "normal"
+      }
+    ],
+    "separated": true
+  }
+}

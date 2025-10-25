@@ -1,0 +1,7 @@
+chimera/=lib/chimera/src/
+ds-test/=lib/forge-std/lib/ds-test/src/
+forge-std/=lib/forge-std/src/
+halmos-cheatcodes/=lib/halmos-cheatcodes/src/
+setup-helpers/=lib/setup-helpers/src/
+@chimera/=lib/chimera/src/
+@recon/=lib/setup-helpers/src/
